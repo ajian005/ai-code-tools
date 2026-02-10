@@ -143,6 +143,25 @@ def run_agent():
         system_prompt=system_prompt
     )
 
+    if False :
+        # Print and save workflow
+        print("\n--- Agent Workflow (Mermaid) ---")
+        try:
+            mermaid_graph = agent.get_graph().draw_mermaid()
+            print(mermaid_graph)
+            graph_image_data = agent.get_graph().draw_mermaid_png()
+            with open("multimodal_workflow.png", "wb") as f:
+                f.write(graph_image_data)
+            print("Workflow graph saved as 'multimodal_workflow.png'")
+            
+            # Save to file
+            workflow_path = Path("agent_workflow.mermaid")
+            workflow_path.write_text(mermaid_graph, encoding="utf-8")
+            print(f"\nWorkflow saved to: {workflow_path.absolute()}")
+        except Exception as e:
+            print(f"Could not draw/save mermaid graph: {e}")
+        print("--------------------------------\n")
+
     # Interactive Loop
     print("LangChain Agent Started. Type 'exit' or 'quit' to end.")
     
