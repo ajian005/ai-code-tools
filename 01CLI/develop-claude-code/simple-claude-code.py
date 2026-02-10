@@ -1,3 +1,7 @@
+# The Emperor Has No Clothes: How to Code Claude Code in 200 Lines of Code  https://www.mihaileric.com/The-Emperor-Has-No-Clothes
+# Claude Code 核心逻辑竟这么简单，200 行 Python 就能复刻~ https://mp.weixin.qq.com/s/cgA36XPK8kiFlEJOyyfEpw
+
+
 import inspect
 import json
 import os
